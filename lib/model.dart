@@ -1,5 +1,5 @@
 
-class ls<String> {
+class ls{
   ls({
    required this.userid,
     required this.firstname,

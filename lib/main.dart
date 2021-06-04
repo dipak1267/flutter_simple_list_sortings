@@ -50,16 +50,15 @@ class _MyCrudeState extends State<MyCrude> {
       appBar: AppBar(
         leading: IconButton(onPressed: () {
           setState(() {
-              if(isrev == isrev){
+              if(isrev){
                 list.sort((a,b) => b.firstname.compareTo(a.firstname));
               }
-              else if(isrev != isrev){
+              else {
                 list.sort((a,b) => a.firstname.compareTo(b.firstname));
               }
              isrev = !isrev;
           });
-        },icon: Icon(Icons.arrow_circle_down)),
-          //icon: isrev ? Icon(Icons.arrow_circle_up) : Icon(Icons.arrow_circle_down),),
+        },icon: isrev ? Icon(Icons.arrow_circle_down) : Icon(Icons.arrow_circle_up)),
         title: isrev ? Text("ascending") : Text("descending"),
       ),
       body: buildbody() ,
@@ -69,8 +68,7 @@ class _MyCrudeState extends State<MyCrude> {
 
   Widget buildbody() {
     return ListView.builder(
-       reverse: isrev,
-
+        shrinkWrap: true,
         itemCount: list.length,
         itemBuilder: (BuildContext context,index){
           return Card(
@@ -79,10 +77,4 @@ class _MyCrudeState extends State<MyCrude> {
           );
         });
   }
-
-
-
-
-
-
 }
