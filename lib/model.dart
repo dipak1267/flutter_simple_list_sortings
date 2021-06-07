@@ -15,7 +15,7 @@ class ls{
   String userid;
   String firstname;
   String lastname;
-  int dates;
+  var dates;
 
 
 
